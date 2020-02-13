@@ -1,26 +1,45 @@
-const createNodeHelpers = require('gatsby-node-helpers').default
 const crypto = require('crypto')
 
-const { createNodeFactory, generateNodeId } = createNodeHelpers({
-  typePrefix: `Gravatar`
-})
+const digest = string =>
+  crypto
+    .createHash(`md5`)
+    .update(string)
+    .digest(`hex`)
 
-const GravatarNode = createNodeFactory(``, node => {
-  if (node.email) {
-    const hash = crypto
-      .createHash(`md5`)
-      .update(node.email)
-      .digest(`hex`)
+const GravatarNode = ({ email, query = null }) => {
+  if (!email)
+    throw Error(
+      `'email' option is required to be a string type in 'gatsby-source-gravatar'.`
+    )
 
-    node.id = generateNodeId(node.__typename, hash)
-    node.hash = hash
-    node.url = `https://www.gravatar.com/avatar/${hash}${
-      node.query ? `?${node.query.replace(/^\?/, '')}` : ``
-    }`
+  const hash = digest(email)
+
+  const data = {
+    url: `https://www.gravatar.com/avatar/${hash}${
+      query ? `?${query.replace(/^\?/, '')}` : ``
+    }`,
+
+    email,
+    hash,
+    query
   }
 
-  return node
-})
+  return {
+    ...data,
+
+    // Required fields.
+    id: `gravatar-${hash}-${digest(query || '')}`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `gravatar`,
+      contentDigest: digest(JSON.stringify(data)),
+      description: `Gravatar URL for email "${email}" with ${
+        query ? 'query "' + query + '"' : 'no queries'
+      }.` // Optional.
+    }
+  }
+}
 
 exports.sourceNodes = async ({ actions }, configOptions = {}) => {
   const { createNode } = actions

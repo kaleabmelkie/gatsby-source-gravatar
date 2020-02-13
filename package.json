@@ -11,9 +11,7 @@
     "format": "prettier --write \"**/*.{tsx,ts,jsx,js,json,md,yml,graphql}\"",
     "test": "echo \"No tests yet.\" && exit 0"
   },
-  "dependencies": {
-    "gatsby-node-helpers": "^0.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "husky": "^4.2.3",
     "prettier": "^1.19.1"
