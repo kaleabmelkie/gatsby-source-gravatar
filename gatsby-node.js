@@ -24,7 +24,7 @@ const GravatarNode = createNodeFactory(``, node => {
 
 exports.sourceNodes = async ({ actions }, configOptions = {}) => {
   const { createNode } = actions
-  const { emails = [] } = configOptions
+  const { emails = [], query = '' } = configOptions
 
-  emails.forEach(email => createNode(GravatarNode({ email })))
+  emails.forEach(email => createNode(GravatarNode({ email, query })))
 }
