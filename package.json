@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-gravatar",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Gatsby plugin to source Gravatar URLs from emails.",
   "main": "index.js",
   "repository": "https://github.com/kaleabmelkie/gatsby-source-gravatar.git",
