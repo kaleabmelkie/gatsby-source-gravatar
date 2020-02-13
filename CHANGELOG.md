@@ -1,5 +1,9 @@
 # gatsby-source-gravatar change log
 
+#### v0.2.1
+
+- Prepare to launch as a plugin on httsp://www.gatsbyjs.org/plugins
+
 ### v0.2.0
 
 - Add an optional feature to pass `query` per email entry
