@@ -10,10 +10,9 @@ Gatsby plugin to source Gravatar URLs from emails.
 ## Install
 
 ```bash
-yarn add gatsby-source-graphql
+yarn add gatsby-source-gravatar
 
-# OR:
-# npm install --save gatsby-source-graphql
+# npm install --save gatsby-source-gravatar
 ```
 
 ## How to Configure
@@ -22,16 +21,22 @@ yarn add gatsby-source-graphql
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-source-gravatar',
+      resolve: `gatsby-source-gravatar`,
       options: {
-        // a list of emails to create URLs for
-        // this is required.
-        emails: ['name@example.com']
+        // Required.
+        // A list of emails to create URLs for.
+        emails: [
+          // Could be just a strings,
+          `first@example.com`,
+          // Or an object, to pass an optional gravatar `query` parameter per email (see below).
+          { email: `second@example.com`, query: `?size=128` }
+        ]
 
-        // optional query string
-        // see https://en.gravatar.com/site/implement/images/
-        // there no query string is passed to gravatar by default
-        // but you can add your custom parameters like:
+        // Optional.
+        // No query string is passed to gravatar by default.
+        // But you can add your gravatar query parameters here.
+        // See https://en.gravatar.com/site/implement/images/
+        // If this is set, it will be the default for `emails` (see above) with no `query` options.
         query: `?size=64&m=dp`
       }
     }
@@ -45,7 +50,7 @@ To get the Gravatar URL for one of the configured emails:
 
 ```graphql
 {
-  gravatar(email: { eq: "name@example.com" }) {
+  gravatar(email: { eq: "first@example.com" }) {
     url
   }
 }
