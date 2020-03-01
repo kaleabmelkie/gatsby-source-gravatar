@@ -17,7 +17,9 @@ yarn add gatsby-source-gravatar
 
 ## How to Configure
 
-```js
+In `gatsby-config.js`:
+
+```javascript
 module.exports = {
   plugins: [
     {
@@ -43,6 +45,8 @@ module.exports = {
   ]
 }
 ```
+
+This configuration adds the the generated URLs into Gatsby's GraphQL nodes. This means that, when integrated with libraries like [gatsby-plugin-remote-images](https://npm.im/gatsby-plugin-remote-images), it can be possible to get static Gravatar images that can be processed by [gatsby-image](https://npm.im/gatsby-image).
 
 ## How to Query
 
@@ -74,6 +78,28 @@ To get all Gravatar URLs:
   }
 }
 ```
+
+## Dynamic (On-Demand) Querying
+
+Sometimes, we may not know which emails (and with what parameters) to include in `gatsby-config.js` ahead of time. So we can get the parsed URL using a method called `toUrl`:
+
+```typescript
+import React, { useMemo } from 'react'
+import { toUrl } from 'gatsby-source-gravatar'
+
+function Profile({ email }) {
+  const url = useMemo(() => toUrl(email, 'size=128'), [email])
+
+  return <>...</>
+}
+```
+
+## Exports
+
+- `toUrl`: receives an `email` (and an optional `query`) parameter and responds with an a Gravatar URL.
+- `parseNode`: receives an `email` (and an optional `query`) parameter and responds with a Node that can be passed to Gatsby's `createNode` method (this also includes this plugin's generated node data).
+- `parseData`: receives an `email` (and an optional `query`) parameter and responds with an object containing the `url`, `email`, `hash` and `query`.
+- `digest`: receives a `string` parameter and responds with its MD5 hash string.
 
 ## Licence
 

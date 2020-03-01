@@ -1,5 +1,9 @@
 # gatsby-source-gravatar change log
 
+### v0.3
+
+- Add support for four exported functions: `digest`, `parseData`, `parseNode` and `toUrl`
+
 #### v0.2.1
 
 - Prepare to launch as a plugin on httsp://www.gatsbyjs.org/plugins
