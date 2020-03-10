@@ -1,6 +1,10 @@
 # gatsby-source-gravatar change log
 
-### v0.3
+### v1.0.0
+
+- First stable release (no major changes since v0.3)
+
+### v0.3.0
 
 - Add support for four exported functions: `digest`, `parseData`, `parseNode` and `toUrl`
 
