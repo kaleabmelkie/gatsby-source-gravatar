@@ -101,6 +101,10 @@ function Profile({ email }) {
 - `parseData`: receives an `email` (and an optional `query`) parameter and responds with an object containing the `url`, `email`, `hash` and `query`.
 - `digest`: receives a `string` parameter and responds with its MD5 hash string.
 
+## Optimizations
+
+Read up on [this article](https://medium.com/swlh/optimizing-gravatars-in-gatsby-ccf8cf359ccf) to learn how to optimize Gravatars using [gatsby-image](https://www.npm.im/gatsby-image).
+
 ## Licence
 
 Made with &hearts; in Addis Ababa.
