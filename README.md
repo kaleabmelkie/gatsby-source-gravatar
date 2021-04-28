@@ -31,18 +31,18 @@ module.exports = {
           // Could be just a strings,
           `first@example.com`,
           // Or an object, to pass an optional gravatar `query` parameter per email (see below).
-          { email: `second@example.com`, query: `?size=128` }
-        ]
+          { email: `second@example.com`, query: `?size=128` },
+        ],
 
         // Optional.
         // No query string is passed to gravatar by default.
         // But you can add your gravatar query parameters here.
         // See https://en.gravatar.com/site/implement/images/
         // If this is set, it will be the default for `emails` (see above) with no `query` options.
-        query: `?size=64&m=dp`
-      }
-    }
-  ]
+        query: `?size=64&m=dp`,
+      },
+    },
+  ],
 }
 ```
 
@@ -90,7 +90,7 @@ import { toUrl } from 'gatsby-source-gravatar'
 function Profile({ email }) {
   const url = useMemo(() => toUrl(email, 'size=128'), [email])
 
-  return <>...</>
+  return <img src={url} alt={`${email}'s gravatar`} />
 }
 ```
 
@@ -109,4 +109,4 @@ Read up on [this article](https://medium.com/swlh/optimizing-gravatars-in-gatsby
 
 Made with &hearts; in Addis Ababa.
 
-[MIT License](LICENSE) &copy; 2020 [Kaleab S. Melkie](https://bit.ly/kaleab).
+[MIT License](LICENSE) &copy; 2020-2021 [Kaleab S. Melkie](https://bit.ly/kaleab).
