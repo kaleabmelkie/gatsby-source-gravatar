@@ -4,6 +4,10 @@
   "description": "Gatsby plugin to source Gravatar URLs from emails.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
+  "files": [
+    "src/**",
+    "gatsby-node.js"
+  ],
   "keywords": [
     "gatsby",
     "gatsby-plugin",
