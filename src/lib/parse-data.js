@@ -1,4 +1,4 @@
-const digest = require('./digest')
+const md5 = require('md5')
 
 function parseData(_email, _query = null) {
   if (
@@ -10,7 +10,7 @@ function parseData(_email, _query = null) {
     throw Error(`'email' is required in 'gatsby-source-gravatar'.`)
 
   const email = typeof _email === 'string' ? _email : _email.email
-  const hash = digest(email)
+  const hash = md5(email)
   const query = typeof _email === 'object' ? _email.query : _query || null
 
   return {
@@ -20,7 +20,7 @@ function parseData(_email, _query = null) {
 
     email,
     hash,
-    query
+    query,
   }
 }
 

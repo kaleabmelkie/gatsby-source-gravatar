@@ -7,5 +7,5 @@ module.exports = {
   digest,
   parseData,
   parseNode,
-  toUrl
+  toUrl,
 }
