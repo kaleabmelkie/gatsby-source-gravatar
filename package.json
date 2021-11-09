@@ -19,30 +19,26 @@
     "url": "https://github.com/kaleabmelkie/gatsby-source-gravatar/issues"
   },
   "homepage": "https://github.com/kaleabmelkie/gatsby-source-gravatar#readme",
-  "author": "Kaleab S. Melkie <kaleabmelkie@gmail.com> (https://bit.ly/kaleab)",
+  "author": "Kaleab S. Melkie <hi@kaleabmelkie.com> (https://kaleabmelkie.com/)",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "format": "prettier --write \"**/*.{tsx,ts,jsx,js,json,md,yml,graphql}\"",
-    "test": "echo \"No tests yet.\" && exit 0"
+    "format": "prettier --check --write \"**/*.{tsx,ts,jsx,js,json,md,yml,graphql}\"",
+    "test": "echo \"No tests yet.\" && exit 0",
+    "husky:install": "husky install"
   },
   "peerDependencies": {
-    "gatsby": "^2.0.0 || ^3.0.0"
+    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "dependencies": {
     "md5": "^2.3.0"
   },
   "devDependencies": {
-    "husky": "^6.0.0",
-    "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && git update-index --again"
-    }
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "release": "^6.3.0"
   },
   "prettier": {
-    "endOfLine": "lf",
     "semi": false,
     "singleQuote": true
   }
