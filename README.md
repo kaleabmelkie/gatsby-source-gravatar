@@ -83,8 +83,8 @@ To get all Gravatar URLs:
 
 Sometimes, we may not know which emails (and with what parameters) to include in `gatsby-config.js` ahead of time. So we can get the parsed URL using a method called `toUrl`:
 
-```typescript
-import React, { useMemo } from 'react'
+```tsx
+import { useMemo } from 'react'
 import { toUrl } from 'gatsby-source-gravatar'
 
 function Profile({ email }) {
@@ -109,4 +109,4 @@ Read up on [this article](https://medium.com/swlh/optimizing-gravatars-in-gatsby
 
 Made with &hearts; in Addis Ababa.
 
-[MIT License](LICENSE) &copy; 2020-2021 [Kaleab S. Melkie](https://bit.ly/kaleab).
+[MIT License](LICENSE) &copy; 2020-2021 [Kaleab S. Melkie](https://kaleabmelkie.com/).
