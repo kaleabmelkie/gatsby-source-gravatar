@@ -28,7 +28,7 @@
     "husky:install": "husky install"
   },
   "peerDependencies": {
-    "gatsby": "^2.0.0 || ^3.0.0"
+    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "dependencies": {
     "md5": "^2.3.0"
@@ -39,7 +39,6 @@
     "release": "^6.3.0"
   },
   "prettier": {
-    "endOfLine": "lf",
     "semi": false,
     "singleQuote": true
   }
