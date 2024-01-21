@@ -10,7 +10,7 @@ Gatsby plugin to source Gravatar URLs from emails.
 ## Install
 
 ```bash
-pnpm add gatsby-source gravatar
+pnpm add gatsby-source-gravatar
 
 # Or:
 npm install gatsby-source-gravatar
