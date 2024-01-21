@@ -10,9 +10,13 @@ Gatsby plugin to source Gravatar URLs from emails.
 ## Install
 
 ```bash
-yarn add gatsby-source-gravatar
+pnpm add gatsby-source gravatar
 
-# npm install --save gatsby-source-gravatar
+# Or:
+npm install gatsby-source-gravatar
+
+# Or:
+yarn add gatsby-source-gravatar
 ```
 
 ## How to Configure
@@ -109,4 +113,4 @@ Read up on [this article](https://medium.com/swlh/optimizing-gravatars-in-gatsby
 
 Made with &hearts; in Addis Ababa.
 
-[MIT License](LICENSE) &copy; 2020-2021 [Kaleab S. Melkie](https://kaleabmelkie.com/).
+[MIT License](LICENSE) &copy; 2020-2024 [Kaleab S. Melkie](https://kaleabmelkie.com/).
